@@ -10,3 +10,13 @@ dependencies = [
   "check-format",
   "clippy",
 ]
+
+[tasks.pre-git-commit]
+dependencies = [
+  "lint",
+]
+
+[tasks.pre-git-push]
+dependencies = [
+  "test",
+]
