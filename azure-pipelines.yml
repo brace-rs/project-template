@@ -19,3 +19,5 @@ resources:
 
 stages:
 - template: ci/stage-all.yml@templates
+  parameters:
+    toolchain: file
