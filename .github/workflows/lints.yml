@@ -11,7 +11,7 @@ jobs:
         profile: minimal
         toolchain: stable
         override: true
-    - run: rustup component add rustfmt
+        components: rustfmt
     - uses: actions-rs/cargo@v1
       with:
         command: fmt
@@ -27,7 +27,7 @@ jobs:
         profile: minimal
         toolchain: stable
         override: true
-    - run: rustup component add clippy
+        components: clippy
     - uses: actions-rs/clippy-check@v1
       with:
         args: --all -- -D warnings
