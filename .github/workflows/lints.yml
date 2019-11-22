@@ -1,8 +1,8 @@
 name: lints
 on: pull_request
 jobs:
-  format:
-    name: format
+  rustfmt:
+    name: rustfmt
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
