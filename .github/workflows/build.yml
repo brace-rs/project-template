@@ -1,6 +1,10 @@
 name: build
 on:
   pull_request:
+    paths:
+    - '**.rs'
+    - '**/Cargo.toml'
+    - '**/Cargo.lock'
   push:
     branches:
     - master
