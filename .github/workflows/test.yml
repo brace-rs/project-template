@@ -29,15 +29,15 @@ jobs:
     - uses: actions/cache@v1
       with:
         path: ~/.cargo/git
-        key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+        key: ${{ runner.os }}-cargo-git-${{ hashFiles('**/Cargo.lock') }}
         restore-keys: |
-          ${{ runner.os }}-cargo-index-
+          ${{ runner.os }}-cargo-git-
     - uses: actions/cache@v1
       with:
         path: target/debug
-        key: ${{ runner.os }}-cargo-target-debug-${{ hashFiles('**/Cargo.lock') }}
+        key: ${{ runner.os }}-target-debug-${{ hashFiles('**/Cargo.lock') }}
         restore-keys: |
-          ${{ runner.os }}-cargo-target-debug-
+          ${{ runner.os }}-target-debug-
     - uses: actions-rs/cargo@v1
       with:
         command: test
