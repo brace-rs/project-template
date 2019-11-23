@@ -20,6 +20,17 @@ jobs:
       with:
         toolchain: nightly
         override: true
+    - name: Download grcov
+      run: |
+        LOCATION=$(curl -s https://api.github.com/repos/mozilla/grcov/releases/latest \
+        | grep "tag_name" \
+        | awk '{print "https://github.com/mozilla/grcov/releases/download/" substr($2, 2, length($2)-3) "/grcov-linux-x86_64.tar.bz2"}')
+        mkdir bin
+        curl -L -o grcov.tar.bz2 $LOCATION
+        tar xjf grcov.tar.bz2 -C "$PWD/bin"
+        echo "::add-path::$PWD/bin"
+        rm -f grcov.tar.bz2
+      shell: bash
     - uses: actions-rs/cargo@v1
       with:
         command: test
