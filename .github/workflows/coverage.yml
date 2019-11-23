@@ -6,6 +6,7 @@ on:
     - '**/Cargo.toml'
     - '**/Cargo.lock'
     - .github/workflows/coverage.yml
+    - .github/configs/grcov.yml
   push:
     branches:
     - master
@@ -28,6 +29,8 @@ jobs:
         RUSTFLAGS: '-Zprofile -Ccodegen-units=1 -Cinline-threshold=0 -Clink-dead-code -Coverflow-checks=off -Zno-landing-pads'
     - id: coverage
       uses: actions-rs/grcov@v0.1
+      with:
+        config: .github/configs/grcov.yml
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
