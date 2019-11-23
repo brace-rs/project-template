@@ -26,8 +26,8 @@ or conditions.
 
 [build-badge]: https://github.com/brace-rs/project-template/workflows/build/badge.svg
 [build-url]: https://github.com/brace-rs/project-template/actions?query=workflow%3Abuild
-[tests-badge]: https://github.com/brace-rs/project-template/workflows/tests/badge.svg
-[tests-url]: https://github.com/brace-rs/project-template/actions?query=workflow%3Atests
+[tests-badge]: https://github.com/brace-rs/project-template/workflows/test/badge.svg
+[tests-url]: https://github.com/brace-rs/project-template/actions?query=workflow%3Atest
 [contribute-url]: https://github.com/brace-rs/project-template/blob/master/CONTRIBUTING.md
 [license-badge]: https://img.shields.io/badge/license-MIT%20OR%20Apache%202.0-blue.svg
 [license-url]: https://github.com/brace-rs/project-template#license

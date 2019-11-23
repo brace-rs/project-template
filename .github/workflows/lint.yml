@@ -1,4 +1,4 @@
-name: lints
+name: lint
 on: pull_request
 jobs:
   rustfmt:
