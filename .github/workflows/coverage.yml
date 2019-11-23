@@ -35,3 +35,4 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: ${{ steps.coverage.outputs.report }}
+        yml: .github/configs/codecov.yml
