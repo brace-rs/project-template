@@ -5,6 +5,7 @@ on:
     - '**.rs'
     - clippy.toml
     - rustfmt.toml
+    - .github/workflows/lint.yml
 jobs:
   rustfmt:
     name: rustfmt
