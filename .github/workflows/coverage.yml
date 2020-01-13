@@ -19,7 +19,7 @@ jobs:
       with:
         toolchain: stable
         override: true
-    - uses: garyttierney/tarpaulin@f75a8fbd9e5128742c8ca1f98cd23ab7ca173f07
+    - uses: actions-rs/tarpaulin@v0.1
       with:
         version: latest
     - uses: codecov/codecov-action@v1
