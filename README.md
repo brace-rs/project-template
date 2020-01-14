@@ -2,6 +2,7 @@
 
 [![Build Status][build-badge]][build-url]
 [![Tests Status][tests-badge]][tests-url]
+[![Coverage Status][coverage-badge]][coverage-url]
 [![License][license-badge]][license-url]
 
 A project template for the quick instantiation of rust projects.
@@ -31,3 +32,5 @@ or conditions.
 [contribute-url]: https://github.com/brace-rs/project-template/blob/master/CONTRIBUTING.md
 [license-badge]: https://img.shields.io/badge/license-MIT%20OR%20Apache%202.0-blue.svg
 [license-url]: https://github.com/brace-rs/project-template#license
+[coverage-badge]: https://img.shields.io/codecov/c/github/brace-rs/project-template/master
+[coverage-url]: https://codecov.io/gh/brace-rs/project-template
