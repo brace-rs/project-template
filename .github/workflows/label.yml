@@ -4,6 +4,7 @@ jobs:
   pr:
     name: pr
     runs-on: ubuntu-latest
+    if: github.repository == 'brace-rs/project-template'
     steps:
     - if: github.event_name == 'pull_request' && github.event.action == 'opened'
       uses: TimonVS/pr-labeler-action@v3
