@@ -9,7 +9,7 @@ jobs:
       uses: TimonVS/pr-labeler-action@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - uses: csi-lk/package-labeler@v1
+    - uses: csi-lk/package-labeler@v1.0.1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         workspace: crates
