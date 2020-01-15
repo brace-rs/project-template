@@ -1,12 +1,16 @@
 name: label
-on:
-  pull_request:
-    types: [opened]
+on: pull_request
 jobs:
   pr:
     name: pr
     runs-on: ubuntu-latest
     steps:
-    - uses: TimonVS/pr-labeler-action@v3
+    - if: github.event_name == 'pull_request' && github.event.action == 'opened'
+      uses: TimonVS/pr-labeler-action@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: csi-lk/package-labeler@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        workspace: crates
+        prefix: crates/
