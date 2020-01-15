@@ -25,9 +25,9 @@ Unless explicitly stated otherwise any contribution intentionally submitted for
 inclusion in the work shall be dual licensed as above without additional terms
 or conditions.
 
-[build-badge]: https://github.com/brace-rs/project-template/workflows/build/badge.svg
+[build-badge]: https://img.shields.io/github/workflow/status/brace-rs/project-template/build/master
 [build-url]: https://github.com/brace-rs/project-template/actions?query=workflow%3Abuild
-[tests-badge]: https://github.com/brace-rs/project-template/workflows/test/badge.svg
+[tests-badge]: https://img.shields.io/github/workflow/status/brace-rs/project-template/test/master?label=tests
 [tests-url]: https://github.com/brace-rs/project-template/actions?query=workflow%3Atest
 [contribute-url]: https://github.com/brace-rs/project-template/blob/master/CONTRIBUTING.md
 [license-badge]: https://img.shields.io/badge/license-MIT%20OR%20Apache%202.0-blue.svg
