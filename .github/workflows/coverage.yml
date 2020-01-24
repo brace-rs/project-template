@@ -50,3 +50,6 @@ jobs:
       with:
         name: code-coverage-report
         path: cobertura.xml
+    - run: |
+        cargo install cargo-cache --no-default-features --features ci-autoclean
+        cargo-cache

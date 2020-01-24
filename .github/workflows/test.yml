@@ -45,3 +45,6 @@ jobs:
       with:
         command: test
         args: --workspace
+    - run: |
+        cargo install cargo-cache --no-default-features --features ci-autoclean
+        cargo-cache
