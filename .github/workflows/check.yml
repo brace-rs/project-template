@@ -95,6 +95,8 @@ jobs:
         command: build
         args: --release --target ${{ matrix.target }}
 
+    - run: ls -lah target
+
     - name: Clean cache
       run: cargo install cargo-cache --no-default-features --features ci-autoclean && cargo-cache
 
@@ -160,6 +162,8 @@ jobs:
       with:
         command: test
         args: --target ${{ matrix.target }}
+
+    - run: ls -lah target
 
     - name: Clean cache
       run: cargo install cargo-cache --no-default-features --features ci-autoclean && cargo-cache
