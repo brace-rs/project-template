@@ -85,7 +85,7 @@ jobs:
       env:
         cache-name: ${{ matrix.os }}-target-${{ matrix.target }}-release
       with:
-        path: target/${{ matrix.target }}/release
+        path: target
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
         restore-keys: ${{ env.cache-name }}-
 
@@ -94,9 +94,6 @@ jobs:
       with:
         command: build
         args: --release --target ${{ matrix.target }}
-
-    - run: ls -lah target/release
-    - run: ls -lah target/${{ matrix.target }}
 
     - name: Clean cache
       run: cargo install cargo-cache --no-default-features --features ci-autoclean && cargo-cache
@@ -154,7 +151,7 @@ jobs:
       env:
         cache-name: ${{ matrix.os }}-target-${{ matrix.target }}-debug
       with:
-        path: target/${{ matrix.target }}/debug
+        path: target
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
         restore-keys: ${{ env.cache-name }}-
 
@@ -163,9 +160,6 @@ jobs:
       with:
         command: test
         args: --target ${{ matrix.target }}
-
-    - run: ls -lah target/release
-    - run: ls -lah target/${{ matrix.target }}
 
     - name: Clean cache
       run: cargo install cargo-cache --no-default-features --features ci-autoclean && cargo-cache
@@ -212,7 +206,7 @@ jobs:
       env:
         cache-name: ubuntu-latest-target-x86_64-unknown-linux-gnu-tarpaulin
       with:
-        path: target/debug
+        path: target
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
         restore-keys: ${{ env.cache-name }}-
 
