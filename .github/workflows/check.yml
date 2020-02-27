@@ -30,6 +30,7 @@ jobs:
       uses: actions-rs/clippy-check@v1
       with:
         args: --all -- -D warnings
+        name: Lint / Results
         token: ${{ secrets.GITHUB_TOKEN }}
 
   build:
