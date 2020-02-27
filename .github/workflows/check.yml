@@ -69,7 +69,7 @@ jobs:
       with:
         path: ~/.cargo/registry
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Cache cargo git
       uses: actions/cache@v1
@@ -78,7 +78,7 @@ jobs:
       with:
         path: ~/.cargo/git
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Cache target
       uses: actions/cache@v1
@@ -87,7 +87,7 @@ jobs:
       with:
         path: target
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Build
       uses: actions-rs/cargo@v1
@@ -135,7 +135,7 @@ jobs:
       with:
         path: ~/.cargo/registry
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Cache cargo git
       uses: actions/cache@v1
@@ -144,7 +144,7 @@ jobs:
       with:
         path: ~/.cargo/git
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Cache target
       uses: actions/cache@v1
@@ -153,7 +153,7 @@ jobs:
       with:
         path: target
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Test
       uses: actions-rs/cargo@v1
@@ -190,7 +190,7 @@ jobs:
       with:
         path: ~/.cargo/registry
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Cache cargo git
       uses: actions/cache@v1
@@ -199,7 +199,7 @@ jobs:
       with:
         path: ~/.cargo/git
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Cache target
       uses: actions/cache@v1
@@ -208,7 +208,7 @@ jobs:
       with:
         path: target
         key: ${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: ${{ env.cache-name }}-
+        # restore-keys: ${{ env.cache-name }}-
 
     - name: Generate code coverage
       uses: actions-rs/tarpaulin@v0.1
