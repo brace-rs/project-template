@@ -145,7 +145,7 @@ jobs:
         tool: cargo-tarpaulin
 
     - name: Generate
-      run: cargo tarpaulin --ignore-tests --out Xml
+      run: cargo tarpaulin --ignore-tests --skip-clean --out Xml
       shell: bash
 
     - name: Upload
