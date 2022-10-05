@@ -6,11 +6,6 @@
 
 A project template for the quick instantiation of rust projects.
 
-## Contributing
-
-To contribute to this project please see our [contributing][contribute-url]
-guide for further information.
-
 ## License
 
 This project is dual licensed under the following licenses at your discretion:
@@ -30,4 +25,3 @@ or conditions.
 [coverage-badge-url]: https://codecov.io/gh/brace-rs/project-template
 [license-badge]: https://img.shields.io/badge/license-MIT%20OR%20Apache%202.0-blue.svg
 [license-badge-url]: https://github.com/brace-rs/project-template#license
-[contribute-url]: https://github.com/brace-rs/project-template/blob/main/CONTRIBUTING.md
