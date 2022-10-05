@@ -1,7 +1,6 @@
 name: CI
 
 on:
-  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -146,7 +145,7 @@ jobs:
         tool: cargo-tarpaulin
 
     - name: Generate
-      run: cargo tarpaulin -- --ignore-tests --out Xml
+      run: cargo tarpaulin --ignore-tests --out Xml
       shell: bash
 
     - name: Upload
