@@ -25,7 +25,7 @@ jobs:
           os: macos-latest
 
         - label: Windows
-          target: x86_64-pc-windows-gnu
+          target: x86_64-pc-windows-msvc
           toolchain: stable
           os: windows-latest
 
