@@ -14,20 +14,23 @@ jobs:
     strategy:
       matrix:
         include:
-        - label: Linux
+        - label: linux
           target: x86_64-unknown-linux-gnu
           toolchain: stable
           os: ubuntu-latest
+          coverage: true
 
-        - label: macOS
+        - label: macos
           target: x86_64-apple-darwin
           toolchain: stable
           os: macos-latest
+          coverage: false
 
-        - label: Windows
+        - label: windows
           target: x86_64-pc-windows-msvc
           toolchain: stable
           os: windows-latest
+          coverage: false
 
     steps:
     - name: Checkout
@@ -39,12 +42,33 @@ jobs:
         targets: ${{ matrix.target }}
         toolchain: ${{ matrix.toolchain }}
 
+    - name: Install Tarpaulin
+      if: matrix.coverage
+      uses: taiki-e/install-action@v1
+      with:
+        tool: cargo-tarpaulin
+
     - name: Cache
       uses: Swatinem/rust-cache@v2
+      with:
+        key: ${{ matrix.coverage }}
 
     - name: Test
+      if: '!matrix.coverage'
       run: cargo test --target ${{ matrix.target }}
       shell: bash
+
+    - name: Test (Coverage)
+      if: matrix.coverage
+      run: cargo tarpaulin --target ${{ matrix.target }} --skip-clean --out Xml
+      shell: bash
+
+    - name: Upload Coverage
+      if: matrix.coverage
+      uses: codecov/codecov-action@v3
+      with:
+        flags: ${{ matrix.label }}
+        token: ${{ secrets.CODECOV_TOKEN }}
 
   lint:
     name: Lint
@@ -72,34 +96,3 @@ jobs:
     - name: Clippy
       run: cargo clippy -- -D warnings
       shell: bash
-
-  coverage:
-    name: Coverage
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Setup
-      uses: dtolnay/rust-toolchain@master
-      with:
-        targets: x86_64-unknown-linux-gnu
-        toolchain: stable
-
-    - name: Cache
-      uses: Swatinem/rust-cache@v2
-
-    - name: Install
-      uses: taiki-e/install-action@v1
-      with:
-        tool: cargo-tarpaulin
-
-    - name: Generate
-      run: cargo tarpaulin --ignore-tests --skip-clean --out Xml
-      shell: bash
-
-    - name: Upload
-      uses: codecov/codecov-action@v3
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
