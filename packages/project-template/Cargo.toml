@@ -1,6 +1,6 @@
 [package]
 name = "project-template"
-version = "0.1.0"
+version = "0.0.0"
 description = "A project template for the quick instantiation of rust projects."
 authors = ["Daniel Balcomb <daniel.balcomb@gmail.com>"]
 keywords = []
