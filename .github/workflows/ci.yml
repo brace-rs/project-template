@@ -24,13 +24,13 @@ jobs:
           target: x86_64-apple-darwin
           toolchain: stable
           os: macos-latest
-          coverage: false
+          coverage: true
 
         - label: windows
           target: x86_64-pc-windows-msvc
           toolchain: stable
           os: windows-latest
-          coverage: false
+          coverage: true
 
     steps:
     - name: Checkout
