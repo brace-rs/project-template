@@ -30,7 +30,7 @@ jobs:
           target: x86_64-pc-windows-msvc
           toolchain: stable
           os: windows-latest
-          coverage: true
+          coverage: false
 
     steps:
     - name: Checkout
