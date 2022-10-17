@@ -24,7 +24,7 @@ jobs:
           target: x86_64-apple-darwin
           toolchain: stable
           os: macos-latest
-          coverage: true
+          coverage: false
 
         - label: windows
           target: x86_64-pc-windows-msvc
